@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <script src="student.js"></script>
+    <script>
+        var student = new Student();
+
+        function nameController(inp, out) {
+            this.inputElement = document.getElementById(inp);
+            this.outputElement = document.getElementById(out);
+            this.inputElement.addEventListener("keyup", manageName);
+            self = this;
+
+            function manageName(e) {
+                var inpText = e.target.value;
+                student.setName(inpText);
+                self.outputElement.innerText = student.name;
+
+            }
+
+        }
+        function init() {
+            var nc = new nameController("textName", "outputName");
+        }
+
+    </script>
+</head>
+
+<body onload="init()">
+    <table style="width:100%">
+        <form>
+            <tr>
+                <td>
+                    Name
+                    <br>
+                    <input st id="textName">
+                </td>
+                <td>
+                    Mark1
+                    <br>
+                    <input id="textMark1">
+                </td>
+                <td>
+                    Mark2
+                    <br>
+                    <input id="textMark2">
+                </td>
+                <td>
+                    Mark3
+                    <br>
+                    <input id="textMark3">
+                </td>
+            </tr>
+        </form>
+    </table>
+    <br>
+    <table class="outputTable">
+        <tr>
+            <td>Name</td>
+            <td id="outputName"> </td>
+        </tr>
+        <tr>
+            <td>Mark1</td>
+            <td id="ouputMark1"></td>
+        </tr>
+        <tr>
+            <td>Mark2</td>
+            <td id="ouputMark2"></td>
+        </tr>
+        <tr>
+            <td>Mark3</td>
+            <td id="outputMark3"></td>
+        </tr>
+        <tr>
+            <td>Tota1</td>
+            <td id="outputTotal"></td>
+        </tr>
+        <tr>
+            <td>Average</td>
+            <td id="outputAverage"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
